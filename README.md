@@ -465,7 +465,7 @@ Models.CFDocumentSet result = await documentsManager.GetAllCFDocuments(limit, of
 
 
 ```csharp
-Task<Models.CFDocumentType> GetCFDocument(string sourcedId)
+Task<Models.CFDocument> GetCFDocument(string sourcedId)
 ```
 
 #### Parameters
@@ -480,7 +480,7 @@ Task<Models.CFDocumentType> GetCFDocument(string sourcedId)
 ```csharp
 string sourcedId = "sourcedId";
 
-Models.CFDocumentType result = await documentsManager.GetCFDocument(sourcedId);
+Models.CFDocument result = await documentsManager.GetCFDocument(sourcedId);
 
 ```
 

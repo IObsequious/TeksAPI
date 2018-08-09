@@ -69,7 +69,7 @@ namespace TEKS.Controllers
         public async Task<Models.CFAssociation> GetCFAssociationAsync(string sourcedId)
         {
             //the base uri for api requests
-            string _baseUri = Configuration.BaseUri;
+            string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -154,7 +154,7 @@ namespace TEKS.Controllers
         public async Task<Models.CFAssociationSet> GetCFItemAssociationsAsync(string sourcedId)
         {
             //the base uri for api requests
-            string _baseUri = Configuration.BaseUri;
+            string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);

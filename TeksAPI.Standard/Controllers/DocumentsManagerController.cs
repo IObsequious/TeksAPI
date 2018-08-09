@@ -91,7 +91,7 @@ namespace TEKS.Controllers
                 List<string> fields = null)
         {
             //the base uri for api requests
-            string _baseUri = Configuration.BaseUri;
+            string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -165,10 +165,10 @@ namespace TEKS.Controllers
         /// This is a request to the service provider to provide the information for the specific Competency Framework Document. If the identified record cannot be found then the 'unknownobject' status code must be reported.
         /// </summary>
         /// <param name="sourcedId">Required parameter: The UUID that identifies the Competency Framework Document that is to be read from the service provider.</param>
-        /// <return>Returns the Models.CFDocumentType response from the API call</return>
-        public Models.CFDocumentType GetCFDocument(string sourcedId)
+        /// <return>Returns the Models.CFDocument response from the API call</return>
+        public Models.CFDocument GetCFDocument(string sourcedId)
         {
-            Task<Models.CFDocumentType> t = GetCFDocumentAsync(sourcedId);
+            Task<Models.CFDocument> t = GetCFDocumentAsync(sourcedId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -177,11 +177,11 @@ namespace TEKS.Controllers
         /// This is a request to the service provider to provide the information for the specific Competency Framework Document. If the identified record cannot be found then the 'unknownobject' status code must be reported.
         /// </summary>
         /// <param name="sourcedId">Required parameter: The UUID that identifies the Competency Framework Document that is to be read from the service provider.</param>
-        /// <return>Returns the Models.CFDocumentType response from the API call</return>
-        public async Task<Models.CFDocumentType> GetCFDocumentAsync(string sourcedId)
+        /// <return>Returns the Models.CFDocument response from the API call</return>
+        public async Task<Models.CFDocument> GetCFDocumentAsync(string sourcedId)
         {
             //the base uri for api requests
-            string _baseUri = Configuration.BaseUri;
+            string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -238,7 +238,7 @@ namespace TEKS.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.CFDocumentType>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.CFDocument>(_response.Body);
             }
             catch (Exception _ex)
             {

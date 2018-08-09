@@ -21,13 +21,13 @@ namespace TEKS.Models
     public class CFDocumentSet : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private List<Models.CFDocumentType> cFDocuments;
+        private List<Models.CFDocument> cFDocuments;
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("CFDocuments")]
-        public List<Models.CFDocumentType> CFDocuments 
+        public List<Models.CFDocument> CFDocuments 
         { 
             get 
             {

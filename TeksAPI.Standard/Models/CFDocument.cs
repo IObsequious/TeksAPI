@@ -18,7 +18,7 @@ using TEKS.Utilities;
 
 namespace TEKS.Models
 {
-    public class CFDocumentType : BaseModel 
+    public class CFDocument : BaseModel 
     {
         // These fields hold the values for the public properties.
         private string identifier;
